@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Account Managment</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <style>
+        #view-add-account{
+            display: none;
+        }
+        #view-edit-account{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <header class="bg-light">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light ms-4 me-4">
+            <a class="navbar-brand me-auto">Logo</a>
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a href="view-accounts-content" class="nav-link text-danger">Accounts</a></li>
+                <li class="nav-item"><a href="view-add-account" class="nav-link text-danger">Add Account</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main class="container">
+        
+        <!--Display All Accounts-->
+        <div class="view " id="view-accounts-content">
+            <h1 class="display-6 mt-2 text-center">List of all accounts</h1>
+            <div class="view-accounts-list-table">
+                <table class="table table-striped" id="accounts-table">
+                    <thead class="thead text-center bg-light">
+                        <tr>
+                            <th>#</th>
+                            <th>First Name</th>
+                            <th>Last Name</th>
+                            <th>E-mail</th>
+                            <th>Phone</th>
+                            <th class="bg-warning border-top border-warning">Edit</th>
+                            <th class="bg-danger border-top border-danger">Remove</th>
+                        </tr>
+                    </thead>
+                    <tbody class="tbody text-center" id="accounts-table-body">
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <!--Add Account View-->
+        <div class="view " id="view-add-account">
+            <h1 class="display-6 mt-2 text-center">Add New Account</h1>
+            <div class="row">
+                <div class="col-8 offset-2">
+                    <input type="text" name="id" id="id" placeholder="id" class="form-control" /><br>
+                    <input type="text" name="first_name" id="first_name" placeholder="First_name" class="form-control"/><br>
+                    <input type="text" name="last_name" id="last_name" placeholder="Last_name" class="form-control"/><br>
+                    <input type="text" name="e-mail" id="email" placeholder="E-mail" class="form-control" /><br>
+                    <input type="text" name="phone" id="phone" placeholder="Phone" class="form-control"/><br>
+                    <button class="form-control btn btn-primary" id="btnSaveAccount">Save</button>
+                </div>
+            </div>
+        </div>
+        <!--Edit Selected Account-->
+        <div class="view" id="view-edit-account">
+            <h1 class="display-6 mt-2 text-center">Edit Account</h1>
+            <div class="row">
+                <div class="col-8 offset-2">
+                    <input type="text" name="id" id="editId"  class="form-control" /><br>
+                    <input type="text" name="first_name" id="edit-FirstName" class="form-control"/><br>
+                    <input type="text" name="last_name" id="edit-LastName"  class="form-control"/><br>
+                    <input type="text" name="email" id="editEmail"  class="form-control" /><br>
+                    <input type="text" name="phone" id="editPhone"  class="form-control"/><br>
+                    <button class="form-control btn btn-warning" id="editSaveAccount">Edit</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="db.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>
